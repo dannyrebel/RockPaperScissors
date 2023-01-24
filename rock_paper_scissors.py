@@ -1,4 +1,6 @@
 import random
+import colorama
+
 
 rock = "Rock"
 paper = "Paper"
@@ -26,15 +28,15 @@ elif computer_choice == 2:
 else:
     computer_choice = scissors
 
-print(f"Computer chose {computer_choice}.")
+print(colorama.Fore.BLUE + f"Computer chose {computer_choice}.")
 
 # Comparing moves and deciding winner
 
 if (player_move == rock and computer_choice == scissors) or (player_move == paper and computer_choice == rock) \
         or (player_move == scissors and computer_choice == paper):
-    print("You win!")
+    print(colorama.Fore.GREEN + "You win!")
 elif (player_move == rock and computer_choice == rock) or (player_move == paper and computer_choice == paper) \
         or (player_move == scissors and computer_choice == scissors):
-    print("Draw!")
+    print(colorama.Fore.YELLOW + "Draw!")
 else:
-    print("You lose!")
+    print(colorama.Fore.RED + "You lose!")
