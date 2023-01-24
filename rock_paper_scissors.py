@@ -1,5 +1,6 @@
 import random
 import colorama
+import pyfiglet
 
 player_score = 0
 computer_score = 0
@@ -56,7 +57,7 @@ while True:
         if restart == "y" or restart == "Y":
             break
         elif restart == "n" or restart == "N":
-            print("Goodbye!")
+            print(pyfiglet.figlet_format('Goodbye!', font='starwars'))
             raise SystemExit
         else:
             print(colorama.Fore.RED + "Invalid option, please confirm your choice.")
