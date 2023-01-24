@@ -48,6 +48,7 @@ while True:
         computer_score += 1
 
     print(f"Player [{player_score}] | Computer [{computer_score}]")
+
     # Restarting the game
 
     while True:
