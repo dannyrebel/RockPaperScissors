@@ -4,6 +4,14 @@ import colorama
 player_score = 0
 computer_score = 0
 
+winning_percent = 1
+
+losing_move = {
+    'Rock': 'Scissors',
+    'Paper': 'Rock',
+    'Scissors': 'Paper'
+}
+
 while True:
     rock = ["Rock", "r", "rock", 1]
     paper = ["Paper", "p", "paper", 2]
@@ -23,14 +31,18 @@ while True:
         print("Invalid input. Please try again!")
         continue
 
-    computer_choice = random.randint(1, 3)
 
-    if computer_choice in rock:
-        computer_choice = rock[0]
-    elif computer_choice in paper:
-        computer_choice = paper[0]
+    if random.random() < winning_percent:
+        computer_choice = losing_move[player_move]
     else:
-        computer_choice = scissors[0]
+        computer_choice = random.randint(1, 3)
+
+        if computer_choice in rock:
+            computer_choice = rock[0]
+        elif computer_choice in paper:
+            computer_choice = paper[0]
+        else:
+            computer_choice = scissors[0]
 
     print(colorama.Fore.BLUE + f"Computer chose {computer_choice}.")
 
