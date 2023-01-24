@@ -1,6 +1,9 @@
 import random
 import colorama
 
+player_score = 0
+computer_score = 0
+
 while True:
     rock = "Rock"
     paper = "Paper"
@@ -36,13 +39,17 @@ while True:
     if (player_move == rock and computer_choice == scissors) or (player_move == paper and computer_choice == rock) \
             or (player_move == scissors and computer_choice == paper):
         print(colorama.Fore.GREEN + "You win!")
+        player_score += 1
     elif (player_move == rock and computer_choice == rock) or (player_move == paper and computer_choice == paper) \
             or (player_move == scissors and computer_choice == scissors):
         print(colorama.Fore.LIGHTYELLOW_EX + "Draw!")
     else:
         print(colorama.Fore.RED + "You lose!")
+        computer_score += 1
 
+    print(f"Player [{player_score}] | Computer [{computer_score}]")
     # Restarting the game
+
     while True:
         restart = str(input(colorama.Fore.LIGHTWHITE_EX + "Play again?: (y / n): "))
         if restart == "y" or restart == "Y":
